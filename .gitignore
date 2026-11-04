@@ -1,0 +1,21 @@
+# Build and test output
+/wireproxy-pool
+/bin/
+/dist/
+*.test
+*.out
+coverage*.txt
+*.log
+
+# Local configuration and credentials
+/configs/*.conf
+.env
+.env.*
+
+# Editor and OS files
+.DS_Store
+.DS-Store
+.codex/
+AGENTS.md
+.idea/
+.vscode/

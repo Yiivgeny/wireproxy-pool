@@ -1,0 +1,36 @@
+# Safe template only. Replace every placeholder locally and save as a .conf file.
+[Interface]
+PrivateKey = REPLACE_WITH_PRIVATE_KEY
+Address = 10.0.0.2/32
+DNS = 1.1.1.1
+MTU = 1420
+
+# AWG 3: copy the key and matching parameters from the server export.
+# Header protection requires every S1-S4 value to be at least 12.
+HeaderProtectionKey = REPLACE_WITH_SERVER_HEADER_PROTECTION_KEY
+S1 = 12
+S2 = 12
+S3 = 12
+S4 = 12
+H1 = 100-199
+H2 = 200-299
+H3 = 300-399
+H4 = 400-499
+ContentPaddingAddition = 10-20
+# Optional client-side settings:
+# Jc = 4
+# Jmin = 40
+# Jmax = 80
+# I1 = <b 0x12345678><r 8>
+# RekeyAfterTime = 120-180
+# RekeyTimeout = 5-10
+# RejectAfterTime = 240-300
+# KeepaliveTimeout = 10-15
+# MaxHandshakeAttempts = 18-20
+
+[Peer]
+PublicKey = REPLACE_WITH_PUBLIC_KEY
+PresharedKey = REPLACE_WITH_PRESHARED_KEY_IF_USED
+Endpoint = vpn.example.invalid:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+PersistentKeepalive = 22-30
